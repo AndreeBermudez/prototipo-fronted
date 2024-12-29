@@ -1,0 +1,64 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+body{
+  background-color: #F6F6F6;
+}
+
+/* LOGIN */
+
+.bg-principal {
+	background-color: #f6f6f6;
+}
+
+.bg-login{
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 60px 40px;
+  width: 400px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  padding: 20px 20px 80px 20px;
+  background-color: #ffffff;
+  color: #1F7EBE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s;
+}
+
+.logo_sidebar {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+}
+
+.btn_sidebar {
+  width: 100%;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #FFF;
+  color: #3A4B5B;
+  transition: background-color 0.3s;
+}
+
+.btn_sidebar:hover {
+  background-color: #E8F2FF;
+  font-weight: 500;
+  color: #1F7EBE
+}
