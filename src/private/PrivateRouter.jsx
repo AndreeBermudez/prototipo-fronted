@@ -3,14 +3,17 @@ import { RoutesWithNotFound } from '../components/RoutesWithNotFound';
 import { RegistrarCodigo } from './RegistrarCodigo/RegistrarCodigo';
 import { ProcesarLicencias } from './ProcesarLicencias/ProcesarLicencias';
 import { TramitarLicencias } from './TramitarLicencias/TramitarLicencias';
+import { Layout } from './Layout';
 
 export const PrivateRouter = () => {
-	return (
-		<RoutesWithNotFound>
-			<Route path='/' element={<Navigate to='/registro' />} />
-			<Route path='registro' element={<RegistrarCodigo />} />
-			<Route path='tramite' element={<TramitarLicencias />} />
-			<Route path='procesar' element={<ProcesarLicencias />} />
-		</RoutesWithNotFound>
-	);
+    return (
+        <RoutesWithNotFound>
+            <Route path='/' element={<Navigate to='/admin/registro' />} />
+            <Route element={<Layout />}>
+                <Route path='registro' element={<RegistrarCodigo />} />
+                <Route path='tramite' element={<TramitarLicencias />} />
+                <Route path='procesar' element={<ProcesarLicencias />} />
+            </Route>
+        </RoutesWithNotFound>
+    );
 };

@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { RoutesWithNotFound } from './components/RoutesWithNotFound';
 import { Login } from './public/Login';
 import { PrivateRouter } from './private/PrivateRouter';

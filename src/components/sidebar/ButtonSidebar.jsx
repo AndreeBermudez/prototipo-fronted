@@ -1,8 +1,8 @@
-export const ButtonSidebar = ({ titulo, Icon }) => {
+export const ButtonSidebar = ({ titulo, Icon, isCollapsed }) => {
 	return (
-		<button className='d-flex align-items-center justify-content-center gap-2 btn_sidebar'>
-			<Icon size={18} color='#1f7ebe' className='icon' />
-			<span>{titulo}</span>
+		<button className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-2 w-full p-2 font-medium text-sm text-[#3A4B5B] bg-white rounded hover:bg-[#E8F2FF] hover:text-[#1F7EBE] hover:font-bold transition-colors duration-300`}>
+			<Icon size={18} color='#1f7ebe'/>
+			<span className={`${isCollapsed ? 'hidden' : 'block'}`}>{titulo}</span>
 		</button>
 	);
 };
