@@ -15,7 +15,6 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica de login aquí
   };
 
   return (
@@ -27,15 +26,9 @@ export const Login = () => {
           MUNICIPALIDAD DE NUEVO CHIMBOTE
         </h1>
       </section>
-
       {/* Contenedor del formulario */}
       <section className='flex justify-center mt-8 sm:mt-10 md:mt-12'>
-        <div className='w-full max-w-[320px] sm:max-w-[380px] md:max-w-sm 
-                        px-6 sm:px-8 md:px-12 
-                        py-12 sm:py-16 md:py-20 
-                        space-y-6 sm:space-y-7 md:space-y-8 
-                        bg-white rounded-lg shadow-md'>
-          
+        <div className='w-full max-w-[320px] sm:max-w-[380px] md:max-w-sm px-6 sm:px-8 md:px-12 py-12 sm:py-16 md:py-20 space-y-6 sm:space-y-7 md:space-y-8 bg-white rounded-lg shadow-md'>     
           <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-600'>
             Iniciar Sesión
           </h2>

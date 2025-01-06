@@ -8,7 +8,7 @@ import { Layout } from './Layout';
 export const PrivateRouter = () => {
     return (
         <RoutesWithNotFound>
-            <Route path='/' element={<Navigate to='/admin/registro' />} />
+            <Route path='/' element={<Navigate to='registro' />} />
             <Route element={<Layout />}>
                 <Route path='registro' element={<RegistrarCodigo />} />
                 <Route path='tramite' element={<TramitarLicencias />} />
