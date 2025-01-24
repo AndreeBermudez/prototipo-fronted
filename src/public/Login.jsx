@@ -5,6 +5,7 @@ import { InputField } from '../components/ui/InputField';
 import { Button } from '../components/ui/Button';
 import { Checkbox } from '../components/ui/Checkbox';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner'
 
 export const Login = () => {
 	const navigate = useNavigate();
@@ -17,6 +18,9 @@ export const Login = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		toast.success('Bienvenido al sistema',{
+			style: {padding: '20px', color: '#1F7EBE'},
+		});
 		navigate('/admin');
 	};
 
