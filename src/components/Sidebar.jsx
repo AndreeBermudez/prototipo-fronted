@@ -15,14 +15,19 @@ export const Sidebar = () => {
     }
     return (
         <>
-            <button className='md:hidden fixed top-4 left-4 z-50'
+            <button className={`md:hidden fixed top-4 z-50 text-[#1f7ebe] transition-all duration-200 ease-in-out ${isMobileMenuOpen ? 'left-60 bg-white rounded-md p-1' : 'left-4'}`}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                <Menu color='#1f7ebe'/>
+                {isMobileMenuOpen ? <PanelRightOpen /> : <PanelLeftOpen />}
             </button>
             <div className={`
-              md:flex md:flex-col justify-between h-screen bg-white transition-all duration-200
+              realtive md:flex md:flex-col justify-between h-screen bg-white transition-all duration-300 ease-in-out
               ${isMobileMenuOpen ? 'z-40 fixed top-0 left-0 w-56' : 'hidden'} 
               ${isCollapsed ? 'lg:w-20' : 'lg:w-56'}`}>
+                <div className={`fixed top-4 transition-all duration-300 ease-in-out ${isCollapsed ? 'left-20' : 'left-56'}`}>
+                    <button className='hidden lg:block p-1 text-blue-600 rounded' onClick={toggleSidebar}>
+                        {isCollapsed ? <PanelLeftOpen /> : <PanelRightOpen />}
+                    </button>
+                </div>
                 <section className='flex flex-col items-center p-4'>
                     <div className='flex items-center mb-6'>
                         <img
@@ -42,11 +47,6 @@ export const Sidebar = () => {
                 </section>
                 <section className='flex flex-col items-center gap-4 p-4'>
                     <ButtonSidebar titulo='Cerrar Sesión' Icon={LogOut} isCollapsed={isCollapsed} />
-                    <div className={`mt-4 ${isCollapsed ? 'flex justify-center w-full' : 'flex justify-end w-full'}`}>
-                        <button className='hidden lg:block p-1 bg-blue-600 text-white rounded hover:bg-blue-700' onClick={toggleSidebar}>
-                            {isCollapsed ? <PanelLeftOpen /> : <PanelRightOpen />}
-                        </button>
-                    </div>
                 </section>
             </div>
             {isMobileMenuOpen && (
