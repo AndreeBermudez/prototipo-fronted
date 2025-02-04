@@ -1,5 +1,5 @@
-import  { useState } from 'react';
-import { CircleCheckBig, FilePlus2, LayoutDashboard, LogOut, Menu, PanelLeftOpen, PanelRightOpen } from 'lucide-react';
+import  { useEffect, useState } from 'react';
+import { CircleCheckBig, FilePlus2, LayoutDashboard, LogOut, PanelLeftOpen, PanelRightOpen } from 'lucide-react';
 import logoMunicipalidad from '../assets/logo-municipalidad.svg';
 import { ButtonSidebar } from './sidebar/ButtonSidebar';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,22 @@ import { Link } from 'react-router-dom';
 export const Sidebar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        const handleResize = (e) => {
+            setIsMobile(e.matches);
+            if (!e.matches) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+        setIsMobile(mediaQuery.matches);
+        mediaQuery.addEventListener('change', handleResize);
+        return () => mediaQuery.removeEventListener('change', handleResize);
+    }, []);
+    
     const toggleSidebar = () => {
         setIsCollapsed(!isCollapsed);
     };
@@ -15,13 +31,14 @@ export const Sidebar = () => {
     }
     return (
         <>
+            {/* SI ESTA EL SIDEBAR ABIERTO PARA MOVIL Y LA PANTALLA SUPERA LOS 768PX TIENE QUE DESACTIVARSE EL MOBILE Y ACTIVAR EL SIDEBAR DESKTOP*/}
             <button className={`md:hidden fixed top-4 z-50 text-[#1f7ebe] transition-all duration-200 ease-in-out ${isMobileMenuOpen ? 'left-60 bg-white rounded-md p-1' : 'left-4'}`}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? <PanelRightOpen /> : <PanelLeftOpen />}
             </button>
             <div className={`
               realtive md:flex md:flex-col justify-between h-screen bg-white transition-all duration-300 ease-in-out
-              ${isMobileMenuOpen ? 'z-40 fixed top-0 left-0 w-56' : 'hidden'} 
+              ${(isMobileMenuOpen && isMobile ) ? 'z-40 fixed top-0 left-0 w-56' : 'hidden'} 
               ${isCollapsed ? 'lg:w-20' : 'lg:w-56'}`}>
                 <div className={`fixed top-4 transition-all duration-300 ease-in-out ${isCollapsed ? 'left-20' : 'left-56'}`}>
                     <button className='hidden lg:block p-1 text-blue-600 rounded' onClick={toggleSidebar}>

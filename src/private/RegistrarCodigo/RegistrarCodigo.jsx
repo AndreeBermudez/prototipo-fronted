@@ -34,6 +34,15 @@ export const RegistrarCodigo = () => {
 					disabled={!code}>
 					Registrar <FileText size={18} />
 				</Button>
+				<InputField
+					name='pago'
+					placeholder='Ingrese el codigo de pago'
+				/>
+				<InputField
+					name='correo'
+					type='email'
+					placeholder='Ingrese el correo electrónico'
+				/>
 			</div>
 			<div className='flex justify-evenly text-sm gap-7'>
 				<InputField name='b-codigo' placeholder='Buscar por código' />
@@ -52,40 +61,42 @@ export const RegistrarCodigo = () => {
 					Limpiar Campos
 				</Button>
 			</div>
-			<table className='w-full border border-none text-sm'>
-				<thead className='bg-[#F9FAFB]'>
-					<tr className='font-semibold'>
-						<th className='border-b border-gray-300 p-2'>Código</th>
-						<th className='border-b border-gray-300 p-2'>Fecha de registro</th>
-						<th className='border-b border-gray-300 p-2'>Estado</th>
-						<th className='border-b border-gray-300 p-2'>Usado</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td className='border-b border-gray-300 text-center p-2'>123456</td>
-						<td className='border-b border-gray-300 text-center p-2'>
-							12/12/2021
-						</td>
-						<td className='border-b border-gray-300 text-center p-2'>
-							No usado
-						</td>
-						<td className='border-b border-gray-300 text-center p-2 flex justify-center'>
-							<X />
-						</td>
-					</tr>
-					<tr>
-						<td className='border-b border-gray-300 text-center p-2'>123456</td>
-						<td className='border-b border-gray-300 text-center p-2'>
-							12/12/2021
-						</td>
-						<td className='border-b border-gray-300 text-center p-2'>Usado</td>
-						<td className='border-b border-gray-300 text-center p-2 flex justify-center'>
-							<Check />
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<div className='w-full'>
+					<table className='w-full border border-none text-sm'>
+						<thead className='bg-[#F9FAFB]'>
+							<tr className='font-semibold'>
+								<th className='border-b border-gray-300 p-2'>Código</th>
+								<th className='border-b border-gray-300 p-2'>Fecha de registro</th>
+								<th className='border-b border-gray-300 p-2'>Estado</th>
+								<th className='border-b border-gray-300 p-2'>Usado</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td className='border-b border-gray-300 text-center p-2'>123456</td>
+								<td className='border-b border-gray-300 text-center p-2'>
+									12/12/2021
+								</td>
+								<td className='border-b border-gray-300 text-center p-2'>
+									No usado
+								</td>
+								<td className='border-b border-gray-300 text-center p-2 flex justify-center'>
+									<X />
+								</td>
+							</tr>
+							<tr>
+								<td className='border-b border-gray-300 text-center p-2'>123456</td>
+								<td className='border-b border-gray-300 text-center p-2'>
+									12/12/2021
+								</td>
+								<td className='border-b border-gray-300 text-center p-2'>Usado</td>
+								<td className='border-b border-gray-300 text-center p-2 flex justify-center'>
+									<Check />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			{/* Para abrir la modal */}
 			{isModalOpen && (
 				<div className='fixed inset-0 flex items-center justify-center bg-black/50'>
