@@ -1,4 +1,4 @@
-import { Check, Download, FileText, Loader} from 'lucide-react';
+import { Download, FileText, Loader} from 'lucide-react';
 import { InputField } from '../../components/ui/InputField';
 import { Button } from '../../components/ui/Button';
 import { SelectField } from '../../components/ui/SelectField';
@@ -24,7 +24,7 @@ export const RegistrarCodigo = () => {
         <h2 className='text-xl md:text-2xl font-bold text-primary'>
           Registro de código de licencia
         </h2>
-        <div className='grid gap-y-5 text-sm'>
+        <div className='grid gap-y-5 text-xs sm:text-sm'>
           <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5'>
             <InputField
               name='codigo'
@@ -36,7 +36,7 @@ export const RegistrarCodigo = () => {
               name='pago'
               placeholder='Ingrese el codigo de pago'
             />
-            <InputEmail name='correo'/>
+            <InputEmail name='correo' placeholder={'email'}/>
           </div>
           <div className='flex justify-start'>
             <Button
@@ -49,7 +49,7 @@ export const RegistrarCodigo = () => {
         </div>
         {isModalOpen && (
           <div className='fixed inset-0 flex items-center justify-center bg-black/50'>
-            <div className='bg-white flex flex-col p-6 w-[500px] rounded-lg shadow-lg gap-y-6'>
+            <div className='bg-white flex flex-col p-6 mx-12 min-w-96 w-[500px] rounded-lg shadow-lg gap-y-6'>
               <h2 className='text-xl font-semibold text-black'>
                 El código ingresado es:
               </h2>
@@ -101,7 +101,7 @@ export const RegistrarCodigo = () => {
         </Button>
         </div>
         <div className='w-full overflow-x-auto'>
-          <table className='min-w-full border border-none text-sm'>
+          <table className='min-w-full border border-none text-xs sm:text-sm'>
             <thead className='bg-[#F9FAFB]'>
               <tr className='font-semibold'>
                 <th className='border-b border-gray-300 p-2 whitespace-nowrap'>Fecha de registro</th>
