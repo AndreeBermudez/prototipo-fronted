@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
 import { CircleCheckBig, FilePlus2, LayoutDashboard, LogOut, PanelLeftOpen, PanelRightOpen } from 'lucide-react';
-import logoMunicipalidad from '../assets/logo-municipalidad.svg';
-import { ButtonSidebar } from './sidebar/ButtonSidebar';
+import logoMunicipalidad from '../../../../assets/logo-municipalidad.svg';
+import { ButtonSidebar } from './ButtonSidebar';
 import { Link } from 'react-router-dom';
 
 export const Sidebar = () => {

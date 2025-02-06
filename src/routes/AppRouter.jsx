@@ -1,7 +1,7 @@
-import { BrowserRouter, Navigate, Route} from 'react-router-dom';
+import { BrowserRouter, Navigate, Route } from 'react-router-dom';
 import { RoutesWithNotFound } from './components/RoutesWithNotFound';
-import { Login } from './public/Login';
-import { PrivateRouter } from './private/PrivateRouter';
+import { Login } from '../pages/public/Login';
+import { PrivateRouter } from './PrivateRouter';
 import { PrivateGuard } from './guards/PrivateGuard';
 
 export const AppRouter = () => {

@@ -1,10 +1,10 @@
 import { Download } from "lucide-react"
-import { Button } from "../../components/ui/Button"
-import { ButtonIconAction } from "../../components/ui/ButtonIconAction"
-import { InputField } from "../../components/ui/InputField"
-import { EstadoTramite } from "../../components/ui/EstadoTramite"
-import { SelectField } from "../../components/ui/SelectField"
+import { InputField } from "../../../components/ui/InputField"
+import { EstadoTramite } from "../../../components/ui/EstadoTramite"
+import { SelectField } from "../../../components/ui/SelectField"
 import { useState } from "react"
+import { Button } from "../../../components/ui/Button"
+import { ButtonIconAction } from "../../../components/ui/ButtonIconAction"
 
 export const ProcesarLicencias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
