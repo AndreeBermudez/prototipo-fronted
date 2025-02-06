@@ -35,49 +35,51 @@ export const TramitarLicencias = () => {
         <div>
           <Button className={"bg-[#EEEDED] text-[#677172] shadow-md"}>Limpiar Campos</Button>
         </div>
-        <table className="w-full border border-none text-sm">
-          <thead className="bg-[#F9FAFB]">
-            <tr className="font-semibold">
-              <th className="border-b border-gray-300 p-2">Fecha</th>
-              <th className="border-b border-gray-300 p-2">Código</th>
-              <th className="border-b border-gray-300 p-2">Razón Social</th>
-              <th className="border-b border-gray-300 p-2">Estado</th>
-              <th className="border-b border-gray-300 p-2">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border-b border-gray-300 text-center p-2">12/12/2021</td>
-              <td className="border-b border-gray-300 text-center p-2">123456</td>
-              <td className="border-b border-gray-300 text-center p-2">Empresa ABC</td>
-              <td className="border-b border-gray-300 text-center p-2">
-                <div className="flex justify-center items-center">
-                  <EstadoTramite type={'tramite'} />
-                </div>
-              </td>
-              <td className="border-b border-gray-300 text-center p-2">
-                <div className="flex justify-center items-center">
-                  <ButtonIconAction Icon={Printer} colorIcon={'#1F7EBE'} colorBg={'#DBEAFE'} />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-gray-300 text-center p-2">12/12/2021</td>
-              <td className="border-b border-gray-300 text-center p-2">123456</td>
-              <td className="border-b border-gray-300 text-center p-2">Empresa ABC</td>
-              <td className="border-b border-gray-300 text-center p-2">
-                <div className="flex justify-center items-center">
-                  <EstadoTramite type={'rechazado'} />
-                </div>
-              </td>
-              <td className="border-b border-gray-300 text-center p-2">
-                <div className="flex justify-center items-center">
-                  <ButtonIconAction Icon={Printer} colorIcon={'#1F7EBE'} colorBg={'#DBEAFE'} />
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="w-full overflow-x-auto ">
+          <table className="w-full border border-none text-sm">
+            <thead className="bg-[#F9FAFB]">
+              <tr className="font-semibold">
+                <th className="border-b border-gray-300 p-2 whitespace-nowrap">Fecha</th>
+                <th className="border-b border-gray-300 p-2 whitespace-nowrap">Código</th>
+                <th className="border-b border-gray-300 p-2 whitespace-nowrap">Razón Social</th>
+                <th className="border-b border-gray-300 p-2 whitespace-nowrap">Estado</th>
+                <th className="border-b border-gray-300 p-2 whitespace-nowrap">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">12/12/2021</td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">123456</td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">Empresa ABC</td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">
+                  <div className="flex justify-center items-center">
+                    <EstadoTramite type={'tramite'} />
+                  </div>
+                </td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">
+                  <div className="flex justify-center items-center">
+                    <ButtonIconAction Icon={Printer} colorIcon={'#1F7EBE'} colorBg={'#DBEAFE'} />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">12/12/2021</td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">123456</td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">Empresa ABC</td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">
+                  <div className="flex justify-center items-center">
+                    <EstadoTramite type={'rechazado'} />
+                  </div>
+                </td>
+                <td className="border-b border-gray-300 text-center p-2 whitespace-nowrap">
+                  <div className="flex justify-center items-center">
+                    <ButtonIconAction Icon={Printer} colorIcon={'#1F7EBE'} colorBg={'#DBEAFE'} />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );

@@ -6,7 +6,7 @@ export const InputField = ({ type = "text", name, placeholder, label, className,
           type={type}
           name={name}
           placeholder={placeholder}
-          className='w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200'
+          className='w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200'
           {...props}
         />
       </div>
