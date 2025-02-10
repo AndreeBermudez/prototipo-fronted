@@ -1,11 +1,58 @@
-import { Download, FileText, Loader } from 'lucide-react';
-import { InputField } from '../../../components/ui/InputField';
-import { Button } from '../../../components/ui/Button';
-import { SelectField } from '../../../components/ui/SelectField';
+import { FileText} from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { InputEmail } from '../../../components/ui/InputEmail';
-import { ButtonIconAction } from '../../../components/ui/ButtonIconAction';
+import { Button } from '../../../components/ui/Button';
+import { InputField } from '../../../components/ui/InputField';
+import { SelectField } from '../components/SelectField';
+import { TableLicense } from '../components/TableLicense';
+
+const headersRegister = [
+	{
+		name: 'Fecha',
+		key: 'fecha',
+	},
+	{
+		name: 'Cod. Zonificacion',
+		key: 'codZonificacion',
+	},
+	{
+		name: 'Cod. Pago',
+		key: 'codPago',
+	},
+	{
+		name: 'RUC',
+		key: 'ruc',
+	},
+	{
+		name: 'Estado',
+		key: 'estado',
+	},
+	{
+		name: 'Documento',
+		key: 'documento',
+	},
+];
+
+const data = [
+	{
+		id: 1,
+		fecha: '12/12/2021',
+		codZonificacion: '556020',
+		codPago: '123456',
+		ruc: '10745623876',
+		estado: 'Disponible',
+		documento: 'Pendiente',
+	},
+	{
+		id: 2,
+		fecha: '12/12/2021',
+		codZonificacion: '556021',
+		codPago: '123456',
+		ruc: '10745623876',
+		estado: 'Utilizado',
+		documento: 'Descargar',
+	},
+];
 
 export const RegistrarCodigo = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,7 +71,7 @@ export const RegistrarCodigo = () => {
 				<h2 className='text-xl md:text-2xl font-bold text-primary'>
 					Registro de código de licencia
 				</h2>
-				<div className='grid gap-y-5 text-xs sm:text-sm'>
+				<div className='grid gap-y-5 text-sm'>
 					<div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5'>
 						<InputField
 							name='codigo'
@@ -33,7 +80,11 @@ export const RegistrarCodigo = () => {
 							onChange={(e) => setCode(e.target.value)}
 						/>
 						<InputField name='pago' placeholder='Ingrese el codigo de pago' />
-						<InputEmail name='correo' placeholder={'email'} />
+						<InputField
+							type='email'
+							name='correo'
+							placeholder='Ingrese el email'
+						/>
 					</div>
 					<div className='flex justify-start'>
 						<Button
@@ -98,7 +149,8 @@ export const RegistrarCodigo = () => {
 					</Button>
 				</div>
 				<div className='w-full overflow-x-auto'>
-					<table className='min-w-full border border-none text-xs sm:text-sm'>
+					<TableLicense headers={headersRegister} data={data} />
+					{/* <table className='min-w-full border border-none text-sm'>
 						<thead className='bg-[#F9FAFB]'>
 							<tr className='font-semibold'>
 								<th className='border-b border-gray-300 p-2 whitespace-nowrap'>
@@ -155,7 +207,7 @@ export const RegistrarCodigo = () => {
 								</td>
 							</tr>
 						</tbody>
-					</table>
+					</table> */}
 				</div>
 			</section>
 		</>

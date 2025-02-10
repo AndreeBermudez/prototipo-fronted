@@ -1,6 +1,6 @@
 export const InputField = ({ type = "text", name, placeholder, label, className, ...props }) => {
     return (
-      <div className={`space-y-2 w-full text-xs sm:text-sm ${className}`}>
+      <div className={`space-y-2 w-full text-sm ${className}`}>
         {label && <label className='block font-bold text-gray-700'>{label}</label>}
         <input
           type={type}
