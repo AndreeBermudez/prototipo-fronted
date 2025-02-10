@@ -4,11 +4,12 @@ import { Logo } from '../../components/ui/Logo';
 import { InputField } from '../../components/ui/InputField';
 import { Button } from '../../components/ui/Button';
 import { Checkbox } from '../../components/ui/Checkbox';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'sonner'
+import { useToast } from '../../context/ToastContext';
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 	const navigate = useNavigate();
+	const {loginNotification} = useToast();
 	const [showPassword, setShowPassword] = useState(false);
 	const [formData, setFormData] = useState({
 		username: '',
@@ -17,11 +18,9 @@ export const Login = () => {
 	});
 
 	const handleSubmit = (e) => {
-		e.preventDefault();
-		toast.success('Bienvenido al sistema',{
-			style: {padding: '20px', color: '#1F7EBE'},
-		});
-		navigate('/admin');
+		e.preventDefault()
+		loginNotification()
+		navigate('/admin')
 	};
 
 	return (

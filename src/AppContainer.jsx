@@ -1,12 +1,13 @@
-import { Toaster } from 'sonner';
 import { App } from './App';
 import { AppRouter } from './routes/AppRouter';
+import { ToastProvider } from './context/ToastContext';
 
 export const AppContainer = () => {
 	return (
 		<App>
-			<Toaster />
-			<AppRouter />
+			<ToastProvider>
+				<AppRouter />
+			</ToastProvider>
 		</App>
 	);
 };

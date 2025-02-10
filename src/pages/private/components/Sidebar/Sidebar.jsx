@@ -3,6 +3,7 @@ import { CircleCheckBig, FilePlus2, LayoutDashboard, LogOut, PanelLeftOpen, Pane
 import logoMunicipalidad from '../../../../assets/logo-municipalidad.svg';
 import { ButtonSidebar } from './ButtonSidebar';
 import { Link } from 'react-router-dom';
+import { ButtonLogout } from './ButtonLogout';
 
 export const Sidebar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -37,8 +38,8 @@ export const Sidebar = () => {
                 {isMobileMenuOpen ? <PanelRightOpen /> : <PanelLeftOpen />}
             </button>
             <div className={`
-              realtive md:flex md:flex-col justify-between h-screen bg-white transition-all duration-300 ease-in-out
-              ${(isMobileMenuOpen && isMobile ) ? 'z-40 fixed top-0 left-0 w-56' : 'hidden'} 
+                md:flex md:flex-col justify-between h-screen bg-white transition-all duration-300 ease-in-out
+              ${(isMobileMenuOpen && isMobile ) ? 'z-40 fixed flex flex-col top-0 left-0 w-56' : 'hidden'} 
               ${isCollapsed ? 'lg:w-20' : 'lg:w-56'}`}>
                 <div className={`fixed top-4 transition-all duration-300 ease-in-out ${isCollapsed ? 'left-20' : 'left-56'}`}>
                     <button className='hidden lg:block p-1 text-blue-600 rounded' onClick={toggleSidebar}>
@@ -57,13 +58,13 @@ export const Sidebar = () => {
                         </span>
                     </div>
                     <div className='flex flex-col gap-2 w-full'>
-                        <Link to="/admin/registro"><ButtonSidebar titulo='Registrar Código' Icon={FilePlus2} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
+                        <Link to="/admin/registro"><ButtonSidebar titulo='Registrar Licencia' Icon={FilePlus2} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
                         <Link to="/admin/tramite"><ButtonSidebar titulo='Tramitar Licencias' Icon={CircleCheckBig} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
-                        <Link to="/admin/procesar"><ButtonSidebar titulo='Procesar Licencias' Icon={LayoutDashboard} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
+                        <Link to="/admin/historial"><ButtonSidebar titulo='Historial Licencias' Icon={LayoutDashboard} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
                     </div>
                 </section>
-                <section className='flex flex-col items-center gap-4 p-4'>
-                    <ButtonSidebar titulo='Cerrar Sesión' Icon={LogOut} isCollapsed={isCollapsed} />
+                <section className={`flex flex-col items-center gap-4 p-4 mb-6`}>
+                    <ButtonLogout titulo='Cerrar Sesión' Icon={LogOut} isCollapsed={isCollapsed} />
                 </section>
             </div>
             {isMobileMenuOpen && (
