@@ -1,5 +1,5 @@
 import  { useEffect, useState } from 'react';
-import { CircleCheckBig, FilePlus2, LayoutDashboard, LogOut, PanelLeftOpen, PanelRightOpen } from 'lucide-react';
+import { CircleCheckBig, FilePlus2, LayoutDashboard, LogOut, PanelLeftOpen, PanelRightOpen, UserCheck } from 'lucide-react';
 import logoMunicipalidad from '../../../../assets/logo-municipalidad.svg';
 import { ButtonSidebar } from './ButtonSidebar';
 import { Link } from 'react-router-dom';
@@ -39,7 +39,7 @@ export const Sidebar = () => {
             </button>
             <div className={`
                 md:flex md:flex-col justify-between h-screen bg-white transition-all duration-300 ease-in-out
-              ${(isMobileMenuOpen && isMobile ) ? 'z-40 fixed flex flex-col top-0 left-0 w-56' : 'hidden'} 
+              ${(isMobileMenuOpen && isMobile ) ? 'z-40 fixed top-0 left-0 w-56' : 'hidden'} 
               ${isCollapsed ? 'lg:w-20' : 'lg:w-56'}`}>
                 <div className={`fixed top-4 transition-all duration-300 ease-in-out ${isCollapsed ? 'left-20' : 'left-56'}`}>
                     <button className='hidden lg:block p-1 text-blue-600 rounded' onClick={toggleSidebar}>
@@ -58,6 +58,7 @@ export const Sidebar = () => {
                         </span>
                     </div>
                     <div className='flex flex-col gap-2 w-full'>
+                        <Link to="/admin/codigo"><ButtonSidebar titulo='Registrar Codigo' Icon={UserCheck} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
                         <Link to="/admin/registro"><ButtonSidebar titulo='Registrar Licencia' Icon={FilePlus2} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
                         <Link to="/admin/tramite"><ButtonSidebar titulo='Tramitar Licencias' Icon={CircleCheckBig} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
                         <Link to="/admin/historial"><ButtonSidebar titulo='Historial Licencias' Icon={LayoutDashboard} isCollapsed={isCollapsed} onClick={toggleButtonSidebar} /></Link>
@@ -69,7 +70,7 @@ export const Sidebar = () => {
             </div>
             {isMobileMenuOpen && (
                 <div 
-                    className="md:hidden fixed inset-0 bg-black/50 z-30"
+                    className="md:hidden fixed inset-0 bg-black/50 z-30 h-screen w-screen"
                     onClick={() => setIsMobileMenuOpen(false)}  
                 />
             )}

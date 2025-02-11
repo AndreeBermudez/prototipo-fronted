@@ -24,7 +24,7 @@ export const Login = () => {
 	};
 
 	return (
-		<div className='w-full min-h-screen p-3 sm:p-5'>
+		<div className='w-full h-dvh p-3 sm:p-5'>
 			{/* Header con logo */}
 			<section className='flex items-center justify-start space-x-2 md:space-x-4'>
 				<Logo className='h-12 sm:h-14' /> {/* Ajustar tamaño del logo */}
